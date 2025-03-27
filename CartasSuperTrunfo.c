@@ -7,18 +7,18 @@
 //Teste larissa
 
 int main() {
-    printf("Desafio Novato Super Trunfo \n");
-    char estado1[20], codigo_carta1[5], nome_cidade1[50];
-    int populacao1, pontos_turisticos1;
-    float area1, pib1;
+    printf("---------Carta 1-------\n");
+    char estado1[20],estado2[20], codigo_carta1[5],codigo_carta2[5], nome_cidade1[50], nome_cidade2[50];
+    int populacao1, populacao2,pontos_turisticos1,pontos_turisticos2;
+    float area1, pib1,area2, pib2;
     printf("Digite o nome do estado: \n");
-    scanf("%s", &estado1);
+    scanf(" %[^\n]", estado1);
 
     printf("Digite o codigo da carta: \n");
-    scanf("%s", &codigo_carta1);
+    scanf("%s", codigo_carta1);
 
     printf("Digite o nome da cidade: \n");
-    scanf("%s", &nome_cidade1);
+    scanf(" %[^\n]",&nome_cidade1);
 
     printf("Diga a populacao: \n");
     scanf("%i", &populacao1);
@@ -32,7 +32,31 @@ int main() {
     printf("Qual a quantidade de pontos turisticos: \n");
     scanf("%i", &pontos_turisticos1);
 
-    printf("Carta 1: ");
+    
+    printf("-------Carta2---------\n");
+    
+    printf("Digite o nome do estado: \n");
+    scanf(" %[^\n]", estado2);
+    
+    printf("Digite o codigo da carta: \n");
+    scanf("%s", codigo_carta2);
+    
+    printf("Digite o nome da cidade: \n");
+    scanf(" %[^\n]", nome_cidade2);
+    
+    printf("Diga a populacao: \n");
+    scanf("%i", &populacao2);
+    
+    printf("Digite a area: \n");
+    scanf("%f", &area2);
+    
+    printf("Digite o PIB: \n");
+    scanf("%f", &pib2);
+    
+    printf("Qual a quantidade de pontos turisticos: \n");
+    scanf("%i", &pontos_turisticos2);
+    
+    printf("CARTA 1: \n");
     printf("Estado: %s \n", estado1);
     printf("Código da carta: %s \n ", codigo_carta1);
     printf("Cidade: %s \n", nome_cidade1);
@@ -40,6 +64,15 @@ int main() {
     printf("Area: %f km² \n", area1);
     printf("PIB: %f \n", pib1);
     printf("Pontos turisticos: %i \n", pontos_turisticos1);
+
+    printf("CARTA 2: \n");
+    printf("Estado: %s \n", estado2);
+    printf("Código da carta: %s \n ", codigo_carta2);
+    printf("Cidade: %s \n", nome_cidade2);
+    printf("Populacao da area: %i \n", populacao2);
+    printf("Area: %f km² \n", area2);
+    printf("PIB: %f \n", pib2);
+    printf("Pontos turisticos: %i \n", pontos_turisticos2);
 
   
    

@@ -7,10 +7,15 @@
 //Teste larissa
 
 int main() {
-    printf("---------Carta 1-------\n");
+    
     char estado1[20],estado2[20], codigo_carta1[5],codigo_carta2[5], nome_cidade1[50], nome_cidade2[50];
     int populacao1, populacao2,pontos_turisticos1,pontos_turisticos2;
     float area1, pib1,area2, pib2;
+   
+    
+
+    printf("---------Carta 1-------\n");
+    
     printf("Digite o nome do estado: \n");
     scanf(" %[^\n]", estado1);
 
@@ -18,7 +23,7 @@ int main() {
     scanf("%s", codigo_carta1);
 
     printf("Digite o nome da cidade: \n");
-    scanf(" %[^\n]",&nome_cidade1);
+    scanf(" %[^\n]", nome_cidade1);
 
     printf("Diga a populacao: \n");
     scanf("%i", &populacao1);
@@ -33,7 +38,7 @@ int main() {
     scanf("%i", &pontos_turisticos1);
 
     
-    printf("-------Carta2---------\n");
+   printf("-------Carta2---------\n");
     
     printf("Digite o nome do estado: \n");
     scanf(" %[^\n]", estado2);
@@ -64,6 +69,10 @@ int main() {
     printf("Area: %f km² \n", area1);
     printf("PIB: %f \n", pib1);
     printf("Pontos turisticos: %i \n", pontos_turisticos1);
+    float densidade_p1 = (float) populacao1/area1;
+    printf("Densidade populacional: %.2f\n", densidade_p1);
+    float pib_percap1 = (float) pib1/populacao1;
+    printf("Pib per capta: %2.f\n", pib_percap1);
 
     printf("CARTA 2: \n");
     printf("Estado: %s \n", estado2);
@@ -73,6 +82,11 @@ int main() {
     printf("Area: %f km² \n", area2);
     printf("PIB: %f \n", pib2);
     printf("Pontos turisticos: %i \n", pontos_turisticos2);
+     float densidade_p2 = (float) populacao2/area2;
+    printf("Densidade populacional: %.2f\n", densidade_p2);
+    float pib_percap2 = (float) pib2/populacao2;
+    printf("Pib per capta: %2.f\n", pib_percap2);
+
 
   
    

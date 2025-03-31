@@ -61,31 +61,30 @@ int main() {
     printf("Qual a quantidade de pontos turisticos: \n");
     scanf("%i", &pontos_turisticos2);
     
-    printf("CARTA 1: \n");
-    printf("Estado: %s \n", estado1);
-    printf("Código da carta: %s \n ", codigo_carta1);
-    printf("Cidade: %s \n", nome_cidade1);
-    printf("Populacao da area: %i \n", populacao1);
-    printf("Area: %f km² \n", area1);
-    printf("PIB: %f \n", pib1);
-    printf("Pontos turisticos: %i \n", pontos_turisticos1);
+    
     float densidade_p1 = (float) populacao1/area1;
-    printf("Densidade populacional: %.2f\n", densidade_p1);
+    
     float pib_percap1 = (float) pib1/populacao1;
-    printf("Pib per capta: %2.f\n", pib_percap1);
+  
+    float inverso_densidade1 = 1.0/densidade_p1;
+    float super_poder1 = populacao1+pib1+area1+pontos_turisticos1+pib_percap1+inverso_densidade1;
 
-    printf("CARTA 2: \n");
-    printf("Estado: %s \n", estado2);
-    printf("Código da carta: %s \n ", codigo_carta2);
-    printf("Cidade: %s \n", nome_cidade2);
-    printf("Populacao da area: %i \n", populacao2);
-    printf("Area: %f km² \n", area2);
-    printf("PIB: %f \n", pib2);
-    printf("Pontos turisticos: %i \n", pontos_turisticos2);
+    
      float densidade_p2 = (float) populacao2/area2;
-    printf("Densidade populacional: %.2f\n", densidade_p2);
+   
     float pib_percap2 = (float) pib2/populacao2;
-    printf("Pib per capta: %2.f\n", pib_percap2);
+    
+    float inverso_densidade2 = 1.0/densidade_p2;
+    float super_poder1 = populacao2+pib2+area2+pontos_turisticos2+pib_percap2+inverso_densidade2;
+
+    int comparativo_pop;
+
+    if (comparativo_pop==1){
+        printf("População: Carta 1 venceu (%d)", comparativo_pop);
+    }else{
+        printf("População: Carta 2 venceu (%d)", comparativo_pop);
+        return 0;
+    }
 
 
   

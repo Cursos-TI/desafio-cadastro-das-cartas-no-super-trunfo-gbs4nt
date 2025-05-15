@@ -11,7 +11,7 @@ int main() {
     char estado1[20],estado2[20], codigo_carta1[5],codigo_carta2[5], nome_cidade1[50], nome_cidade2[50];
     int populacao1, populacao2,pontos_turisticos1,pontos_turisticos2;
     float area1, pib1,area2, pib2;
-    int opcao;
+    int opcao1, opcao2;
     setlocale(LC_ALL, "Portuguese");
    
     
@@ -65,77 +65,167 @@ int main() {
 
     printf("Agora escolha qual o atributo numérico deseja comparar:\n 1 - Populacao \n 2 - Area \n 3 - PIB \n 4 - Numero de pontos turisticos \n 5- Densidade demografica\n");
      
-        scanf("%d", &opcao);
+        scanf("%d", &opcao1);
         
-        switch(opcao){
+         printf("Agora escolha qual o segundo atributo numérico deseja comparar:\n 1 - Populacao \n 2 - Area \n 3 - PIB \n 4 - Numero de pontos turisticos \n 5- Densidade demografica\n");
+         scanf("%d", &opcao2);
+
+         if(opcao1 == opcao2){
+            printf("Nao e permitido comparar um atributo com ele mesmo");
+         }
+
+ printf("Entre os paises %s e %s, o veredito e: \n ", estado1, estado2);
+
+  float densidade_p1 = (float) populacao1/area1;
+    float densidade_p2 = (float) populacao2/area2;
+
+
+          
+           
+         
+        switch(opcao1){
             case 1: {
+                switch (opcao2)
+                { 
+                case 2:
+                    printf("%s\n", populacao1>area2 ? "Carta 1 venceu": "Carta 2 venceu") ;
+                    break;
+                case 3:
+
+                    printf("%s \n", populacao1>pib2 ? "Carta 1 venceu": "Carta 2 venceu") ;
+
+                     break;
+                case 4:
+
+                    printf("%s \n",populacao1>pontos_turisticos2 ? "Carta 1 venceu": "Carta 2 venceu") ;
+                     break;
+
+                case 5:
+
+                    printf("%s \n",populacao1>densidade_p2? "Carta 1 venceu": "Carta 2 venceu") ;
+                     break;
+
+                
+               default:
+                printf("Inválido.\n");
+                break;
+                }
+                break;
+            }
+                
             
-            printf("Entre os paises %s e %s, no quesito populacao o veredito e: ", &estado1, &estado2);
-                if (populacao1>populacao2){
-        printf("População: Carta 1 venceu \n");
-    }else if(populacao1==populacao2){
-        printf("Empate! Ambas cartas tem a mesma populacao");
-    }else{
-        printf("População: Carta 2 venceu \n" );
+            case 2: {
+            switch (opcao2)
+            {
+                case 1:
+                 printf("%s \n",area1>populacao2 ? "Carta 1 venceu": "Carta 2 venceu" );
+                 break;
+
+                case 3:
+                 printf("%s \n",area1>pib2 ? "Carta 1 venceu": "Carta 2 venceu" );
+                 break;
+
+                case 4:
+                 printf("%s \n",area1>pontos_turisticos2 ? "Carta 1 venceu": "Carta 2 venceu" );
+                 break;
+                
+                 case 5:
+                printf("%s \n",area1>densidade_p2? "Carta 1 venceu": "Carta 2 venceu") ;
+                break;
+
+                default:
+            printf("Inválido");
+                break;
+            }
+            break;
         }
-        break;
-    
-    }
- case 2: {
-        int comparativo_area= area1>area2;
-         printf("Entre os paises %s e %s, no quesito area o veredito e: ", &estado1, &estado2);
-    if (comparativo_area==1){
-        printf("Área: Carta 1 venceu (%d)\n", comparativo_area);
-    }else if(area1==area2){
-        printf("Empate! Ambas cartas tem a mesma area");
-    }else{
-        printf("Área: Carta 2 venceu (%d)\n", comparativo_area);
-        
-    }
-     break;
-}
+        case 3 : {
+
+                switch (opcao2)
+                {
+                case 1:
+                printf("%s \n",pib1>populacao2 ? "Carta 1 venceu": "Carta 2 venceu" );
+                
+                break;
+
+                case 2:
+                printf("%s \n",pib1>area2 ? "Carta 1 venceu": "Carta 2 venceu" );
+                
+                break;
+
+                case 4:
+                printf("%s \n", pib1>pontos_turisticos2 ? "Carta 1 venceu": "Carta 2 venceu");
+                
+                break;
+
+                case 5:
+                printf("%s \n",pib1>densidade_p2? "Carta 1 venceu": "Carta 2 venceu");
+                
+                    break;
+                
+                default:
+                    printf("Inválido");
+                    break;
+                }
+            break;
             
-            case 3 : {
-            int comparativo_pib= pib1>pib2;
-             printf("Entre os paises %s e %s, no quesito PIB o veredito e: ", &estado1, &estado2);
-    if (comparativo_pib==1){
-        printf("PIB: Carta 1 venceu (%d)\n", comparativo_pib);
-    }else if(pib1==pib2){
-        printf("Empate! Ambas cartas tem o mesmo pib");
-    }else{
-        printf("PIB: Carta 2 venceu (%d)\n", comparativo_pib);
-    
-        
-    }
-     break;
-}
+        }
 
 case 4 : {
-    int comparativo_turi= pontos_turisticos1>pontos_turisticos2;
-     printf("Entre os paises %s e %s, no quesito pontos turisticos o veredito e: ", &estado1, &estado2);
-    if (comparativo_turi==1){
-        printf("Pontos turísticos: Carta 1 venceu (%d)\n", comparativo_turi);
-    }else if(pontos_turisticos1==pontos_turisticos2){
-        printf("Empate! Ambas cartas tem a quantidade de pontos turísticos");
-    }else{
-        printf("Pontos turísticos: Carta 2 venceu (%d)\n", comparativo_turi);
-        
+    switch (opcao2)
+    {
+    case 1:
+    printf("%s \n", pontos_turisticos1>populacao2 ? "Carta 1 venceu": "Carta 2 venceu" );
+     
+        break;
+
+    case 2:
+        printf("%s \n", pontos_turisticos1>area2 ? "Carta 1 venceu": "Carta 2 venceu" );
+
+   
+    break;
+
+    case 3:
+        printf("%s \n", pontos_turisticos1>pib2 ? "Carta 1 venceu": "Carta 2 venceu" );
+         break;
+
+    case 5:
+        printf("%s \n",pontos_turisticos1>densidade_p2? "Carta 1 venceu": "Carta 2 venceu" );
+         break;
+
+
+    
+    default:
+                printf("Inválido");
+
+        break;
     }
      break;
 }
 case 5 :{
-    float densidade_p1 = (float) populacao1/area1;
-    float densidade_p2 = (float) populacao2/area2;
-    int comparativo_den= densidade_p1>densidade_p2;
-     printf("Entre os paises %s e %s, no quesito densidade demografica o veredito e: ", &estado1, &estado2);
-    if (comparativo_den==1){
-        printf("Densidade demográfica: Carta 2 venceu (%d)\n", comparativo_den);
-    }else if(densidade_p1==densidade_p2){
-        printf("Empate! Ambas cartas tem a mesma densidade demografica");
-    }else{
-        printf("Densidade demográfica: Carta 1 venceu (%d)\n", comparativo_den);
+   
+    switch (opcao2)
+    {
+    case 1:
+        printf("%s \n",  densidade_p1<populacao2 ? "Carta 1 venceu": "Carta 2 venceu" );
 
+   
+        
+        break;
+        case 2:
+            printf("%s \n", densidade_p1<area2 ? "Carta 1 venceu": "Carta 2 venceu");
+         break;
+        case 3:
+        printf("%s \n",  densidade_p1<pib2 ? "Carta 1 venceu": "Carta 2 venceu");
+        break;
+        case 4:
+        printf("%s \n",densidade_p1<pontos_turisticos2 ? "Carta 1 venceu": "Carta 2 venceu");
+        break;
+    
+    default:
+        break;
     }
+    
      break;
 }
  }
